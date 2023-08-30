@@ -42,8 +42,9 @@ CREATE TABLE [dbo].[RestaurantMenu] (
 Delivery Points:
 CREATE TABLE [dbo].[DeliveryLocations] (
     [Location_ID] INT        NOT NULL,
+	[Location_Name] NVARCHAR(50) NULL,
     [Longitude]   FLOAT (53) NULL,
-    [Latidue]     FLOAT (53) NULL,
+    [Latidue]     FLOAT (53) NULL,     
     PRIMARY KEY CLUSTERED ([Location_ID] ASC)
 );
 
