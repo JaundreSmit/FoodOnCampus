@@ -1,0 +1,84 @@
+This is the code used to generate the tables in visual studio:
+
+Drivers:
+CREATE TABLE [dbo].[Drivers]
+Users:
+CREATE TABLE [dbo].[Users] (
+    [User_ID]            INT           NOT NULL,
+    [User_Name]          NVARCHAR (30) NULL,
+    [User_Surname]       NVARCHAR (30) NULL,
+    [User_Email] NVARCHAR(50)           NULL,
+    [User_Password] NVARCHAR(30) NULL, 
+    [User_Role] NVARCHAR(20) NULL, 
+    PRIMARY KEY CLUSTERED ([User_ID] ASC)
+);
+
+
+
+Restaurants:
+CREATE TABLE [dbo].[Restaurants] (
+    [Restaurant_ID]      INT           NOT NULL,
+    [Restaurant_Name]    NVARCHAR (50) NULL,
+    [Restaurant_Location] NVARCHAR(50)    NULL,
+    PRIMARY KEY CLUSTERED ([Restaurant_ID] ASC)
+);
+
+Menu_Items:
+CREATE TABLE [dbo].[MenuItems]
+(
+	[Driver_ID] INT NOT NULL PRIMARY KEY, 
+    [Driver_Name] NVARCHAR(30) NULL, 
+    [Driver_Surname] NVARCHAR(30) NULL, 
+    [Driver_ContactNumber] INT NULL
+	[Menu_ID] INT NOT NULL PRIMARY KEY, 
+    [Item_Desc] NCHAR(10) NULL, 
+    [Item_Price] NCHAR(10) NULL
+)
+
+
+Customers:
+CREATE TABLE [dbo].[Customers]
+#Formal foreign key relationships still need to be implemented
+Restaurant-Menu Items:
+CREATE TABLE [dbo].[RestaurantMenu]
+(
+	[Customer_ID] INT NOT NULL PRIMARY KEY, 
+    [Customer_Name] NVARCHAR(30) NULL, 
+    [Customer_Surname] NVARCHAR(30) NULL, 
+    [Customer_ContactNumber] INT NULL
+	[ID] INT NOT NULL PRIMARY KEY, 
+    	[Restaurant_ID] INT NULL, 
+   	[Menu_ID] INT NULL
+)
+
+**Location needs to be revised**
+Restaurants:
+CREATE TABLE [dbo].[Restaurants]
+Delivery Points:
+CREATE TABLE [dbo].[DeliveryPoints]
+(
+	[Restaurant_ID] INT NOT NULL PRIMARY KEY, 
+    [Restaurant_Name] NVARCHAR(50) NULL, 
+    [Restaurant_Location] NVARCHAR(50) NULL
+	[DP_ID] INT NOT NULL PRIMARY KEY, 
+    [DP_Location_Latitude] FLOAT NULL, 
+    [DP_Location_Longitude] FLOAT NULL, 
+    [DP_Description] NVARCHAR(50) NULL
+)
+
+Orders:
+CREATE TABLE [dbo].[Orders] (
+    [Order_ID]       INT            IDENTITY (1, 1) NOT NULL,
+    [Customer_ID]    INT            NULL,
+    [Driver_ID]      INT            NULL,
+    [DP_ID]          INT            NULL,
+    [Restaurant_ID]  INT            NULL,
+    [Order_Price]    MONEY          NULL,
+    [Menu_Items_IDs] NVARCHAR (150) NULL,
+    [Date] DATE NULL, 
+    [Status] NVARCHAR(25) NULL, 
+    PRIMARY KEY CLUSTERED ([Order_ID] ASC),
+    FOREIGN KEY ([Customer_ID]) REFERENCES [dbo].[Users] ([User_ID]),
+    FOREIGN KEY ([Driver_ID]) REFERENCES [dbo].[Users] ([User_ID]),
+    FOREIGN KEY ([Restaurant_ID]) REFERENCES [dbo].[Restaurants] ([Restaurant_ID])
+);
