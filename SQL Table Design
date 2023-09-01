@@ -2,7 +2,7 @@ This is the code used to generate the tables in visual studio:
 
 Users:
 CREATE TABLE [dbo].[Users] (
-    [User_ID]       INT           IDENTITY (1, 1) NOT NULL,
+    [User_ID]       INT           NOT NULL,
     [User_Name]     NVARCHAR (30) NULL,
     [User_Surname]  NVARCHAR (30) NULL,
     [User_Email]    NVARCHAR (50) NULL,
@@ -10,6 +10,7 @@ CREATE TABLE [dbo].[Users] (
     [User_Role]     NVARCHAR (20) NULL,
     PRIMARY KEY CLUSTERED ([User_ID] ASC)
 );
+
 
 Restaurants:
 CREATE TABLE [dbo].[Restaurants] (

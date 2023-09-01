@@ -16,16 +16,5 @@ namespace FoodOnCampus
         {
             InitializeComponent();
         }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnProfile_Click(object sender, EventArgs e)
-        {
-            frmProfile profile = new frmProfile();
-            profile.ShowDialog();
-        }
     }
 }
