@@ -28,20 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnProfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Location = new System.Drawing.Point(697, 13);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(75, 23);
+            this.btnProfile.TabIndex = 0;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnProfile);
             this.Name = "frmMain";
             this.Text = "Food On Campus";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnProfile;
     }
 }
 
