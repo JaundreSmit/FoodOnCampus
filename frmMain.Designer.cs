@@ -32,6 +32,8 @@
             this.pnlNavigate = new System.Windows.Forms.Panel();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnWelcome = new System.Windows.Forms.Button();
+            this.btnDriverMenu = new System.Windows.Forms.Button();
+            this.btnAdminPanel = new System.Windows.Forms.Button();
             this.pnlNavigate.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +50,8 @@
             // pnlNavigate
             // 
             this.pnlNavigate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlNavigate.Controls.Add(this.btnAdminPanel);
+            this.pnlNavigate.Controls.Add(this.btnDriverMenu);
             this.pnlNavigate.Controls.Add(this.btnOrder);
             this.pnlNavigate.Controls.Add(this.btnProfile);
             this.pnlNavigate.Controls.Add(this.btnWelcome);
@@ -76,6 +80,26 @@
             this.btnWelcome.UseVisualStyleBackColor = true;
             this.btnWelcome.Click += new System.EventHandler(this.btnWelcome_Click);
             // 
+            // btnDriverMenu
+            // 
+            this.btnDriverMenu.Location = new System.Drawing.Point(243, 12);
+            this.btnDriverMenu.Name = "btnDriverMenu";
+            this.btnDriverMenu.Size = new System.Drawing.Size(96, 36);
+            this.btnDriverMenu.TabIndex = 3;
+            this.btnDriverMenu.Text = "Driver Menu";
+            this.btnDriverMenu.UseVisualStyleBackColor = true;
+            this.btnDriverMenu.Click += new System.EventHandler(this.btnDriverMenu_Click);
+            // 
+            // btnAdminPanel
+            // 
+            this.btnAdminPanel.Location = new System.Drawing.Point(364, 12);
+            this.btnAdminPanel.Name = "btnAdminPanel";
+            this.btnAdminPanel.Size = new System.Drawing.Size(96, 36);
+            this.btnAdminPanel.TabIndex = 4;
+            this.btnAdminPanel.Text = "Admin Panel";
+            this.btnAdminPanel.UseVisualStyleBackColor = true;
+            this.btnAdminPanel.Click += new System.EventHandler(this.btnAdminPanel_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,6 +120,8 @@
         internal System.Windows.Forms.Button btnOrder;
         internal System.Windows.Forms.Button btnProfile;
         internal System.Windows.Forms.Button btnWelcome;
+        internal System.Windows.Forms.Button btnDriverMenu;
+        internal System.Windows.Forms.Button btnAdminPanel;
     }
 }
 

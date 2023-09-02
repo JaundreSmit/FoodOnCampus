@@ -60,19 +60,23 @@ namespace FoodOnCampus
         private void ApproveUser(int ID, string sRole)
         {
             //Show new buttons for the user depending on their role
-            //TODO (Buttons)
             if (sRole == "Customer" || sRole == "Admin")
             {
                 //All customers can access this:
-                //TODO
                 fMain.btnProfile.Visible = true;
                 fMain.btnOrder.Visible = true;
             }
 
             if (sRole == "Admin")
             {
-                //Grant Admin privileges if need be
-                //TODO
+                //Allow admins to generate reports and manage the orders
+                fMain.btnAdminPanel.Visible = true;
+            }
+
+            if (sRole == "Driver")
+            {
+                //Allow drivers to manage orders
+                fMain.btnDriverMenu.Visible = true;
             }
 
             //Set the users ID

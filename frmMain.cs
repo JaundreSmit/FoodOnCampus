@@ -81,6 +81,8 @@ namespace FoodOnCampus
             //Insert relevant buttons that open other forms
             btnProfile.Visible = false;
             btnOrder.Visible = false;
+            btnDriverMenu.Visible = false;
+            btnAdminPanel.Visible = false;
         }
 
 
@@ -119,6 +121,34 @@ namespace FoodOnCampus
                 OpenFormAndCloseOthers(fOrders);
             }
             
+        }
+
+        private void btnDriverMenu_Click(object sender, EventArgs e)
+        {
+            if (User_ID == 0)
+            {
+                MessageBox.Show("User is not signed in", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                this.Close();
+            }
+            else
+            {
+                frmDriverMenu fDriverMenu = new frmDriverMenu();
+                OpenFormAndCloseOthers(fDriverMenu);
+            }
+        }
+
+        private void btnAdminPanel_Click(object sender, EventArgs e)
+        {
+            if (User_ID == 0)
+            {
+                MessageBox.Show("User is not signed in", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                this.Close();
+            }
+            else
+            {
+                frmAdmin fAdmin = new frmAdmin();
+                OpenFormAndCloseOthers(fAdmin);
+            }
         }
     }
 }
