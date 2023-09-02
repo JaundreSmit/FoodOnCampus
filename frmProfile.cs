@@ -13,7 +13,7 @@ namespace FoodOnCampus
 {
     public partial class frmProfile : Form
     {
-        private int UserId;  //Placeholder, Replace the 0 in Profile_Load with loged in users ID
+        private int UserId;  //Receives the user id from main form
 
         private SqlDataAdapter adapter;
         private SqlCommand cmd;
@@ -25,14 +25,14 @@ namespace FoodOnCampus
         private string[] restaurantName = new string[100];
         private string[] restaurants = new string[100];
 
-        public frmProfile()
+        public frmProfile(int User_ID)
         {
             InitializeComponent();
+            UserId  = User_ID;
         }
 
         private void frmProfile_Load(object sender, EventArgs e)
         {
-            UserId = 0; //The 0 is a placeholder, replace with the loged in users ID 
 
             conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|DBMain.mdf; Integrated Security = True");
 
