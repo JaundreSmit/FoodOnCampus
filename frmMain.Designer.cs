@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnProfile = new System.Windows.Forms.Button();
             this.pnlNavigate = new System.Windows.Forms.Panel();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.btnWelcome = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnRestaurants = new System.Windows.Forms.Button();
             this.pnlNavigate.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,13 +48,23 @@
             // pnlNavigate
             // 
             this.pnlNavigate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pnlNavigate.Controls.Add(this.btnRestaurants);
+            this.pnlNavigate.Controls.Add(this.btnOrder);
             this.pnlNavigate.Controls.Add(this.btnProfile);
             this.pnlNavigate.Controls.Add(this.btnWelcome);
             this.pnlNavigate.Location = new System.Drawing.Point(0, 0);
             this.pnlNavigate.Name = "pnlNavigate";
             this.pnlNavigate.Size = new System.Drawing.Size(879, 64);
             this.pnlNavigate.TabIndex = 1;
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Location = new System.Drawing.Point(122, 12);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(96, 36);
+            this.btnOrder.TabIndex = 2;
+            this.btnOrder.Text = "Place Order";
+            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnWelcome
             // 
@@ -67,20 +75,6 @@
             this.btnWelcome.Text = "Welcome Page";
             this.btnWelcome.UseVisualStyleBackColor = true;
             this.btnWelcome.Click += new System.EventHandler(this.btnWelcome_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // btnRestaurants
-            // 
-            this.btnRestaurants.Location = new System.Drawing.Point(122, 12);
-            this.btnRestaurants.Name = "btnRestaurants";
-            this.btnRestaurants.Size = new System.Drawing.Size(96, 36);
-            this.btnRestaurants.TabIndex = 2;
-            this.btnRestaurants.Text = "Restaurants";
-            this.btnRestaurants.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -99,8 +93,7 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlNavigate;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        internal System.Windows.Forms.Button btnRestaurants;
+        internal System.Windows.Forms.Button btnOrder;
         internal System.Windows.Forms.Button btnProfile;
         internal System.Windows.Forms.Button btnWelcome;
     }

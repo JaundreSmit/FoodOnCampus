@@ -80,6 +80,7 @@
             this.txtLogInPassword.Name = "txtLogInPassword";
             this.txtLogInPassword.Size = new System.Drawing.Size(182, 20);
             this.txtLogInPassword.TabIndex = 4;
+            this.txtLogInPassword.Text = "Jaundre1";
             // 
             // lblLogInPassword
             // 
@@ -96,6 +97,7 @@
             this.txtLogInEmail.Name = "txtLogInEmail";
             this.txtLogInEmail.Size = new System.Drawing.Size(182, 20);
             this.txtLogInEmail.TabIndex = 2;
+            this.txtLogInEmail.Text = "jaundre123.smit@gmail.com";
             // 
             // lblLogInEmail
             // 

@@ -66,7 +66,7 @@ namespace FoodOnCampus
                 //All customers can access this:
                 //TODO
                 fMain.btnProfile.Visible = true;
-                fMain.btnRestaurants.Visible = true;
+                fMain.btnOrder.Visible = true;
             }
 
             if (sRole == "Admin")

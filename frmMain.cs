@@ -80,7 +80,7 @@ namespace FoodOnCampus
             //Hide certain forms from being accessed if the user in not logged in:
             //Insert relevant buttons that open other forms
             btnProfile.Visible = false;
-            btnRestaurants.Visible = false;
+            btnOrder.Visible = false;
         }
 
 
@@ -104,6 +104,21 @@ namespace FoodOnCampus
         {
             frmWelcome fWelcome = new frmWelcome(this);
             OpenFormAndCloseOthers(fWelcome);
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (User_ID == 0)
+            {
+                MessageBox.Show("User is not signed in", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                this.Close();
+            }
+            else
+            {
+                frmOrders fOrders = new frmOrders(User_ID);
+                OpenFormAndCloseOthers(fOrders);
+            }
+            
         }
     }
 }
