@@ -71,6 +71,16 @@ namespace FoodOnCampus
             //This method must send an email to the driver details about the order
             //Also should direct user to a payment screen
             //No formal payment functionality is required, maybe just a mock screen?
+
+            frmPayment frmPayment = new frmPayment();
+            frmPayment.Data = Order_Price;
+            frmPayment.ShowDialog();
+
+            if (frmPayment.Payed)
+            {
+
+            }
+
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
