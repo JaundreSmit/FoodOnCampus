@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office.Word;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -71,6 +73,38 @@ namespace FoodOnCampus
             //This method must send an email to the driver details about the order
             //Also should direct user to a payment screen
             //No formal payment functionality is required, maybe just a mock screen?
+
+            frmPayment frmPayment = new frmPayment();
+            frmPayment.Data = Order_Price;
+            frmPayment.ShowDialog();
+            try
+            {
+                if (frmPayment.Payed)
+                {
+                    string email = "";
+
+                    con.Open();
+
+                    comm = new SqlCommand("SELECT User_Email FROM Users WHERE User_Role = 'Driver' ", con); //can change this sql statement to select a specific driver
+                    dataReader = comm.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        email = dataReader.GetValue(0).ToString();  //at this stage selects the last driver to send an email to
+                    }
+
+                    con.Close();
+
+
+                    //can replace "Test" parameter with any information you want to give to the driver
+                    Email.SendEmail("smtp.gmail.com", 587, true, "foodoncampusnwu@gmail.com", "rnxdxuxdsvwynpjk", email, "New order", "Test"); 
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error");
+            }
+
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
