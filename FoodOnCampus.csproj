@@ -136,6 +136,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Email.cs" />
     <Compile Include="frmAddDriver.cs">
       <SubType>Form</SubType>
     </Compile>
