@@ -256,6 +256,13 @@ namespace FoodOnCampus
                 errorMessage += "Password should contain at least one number.\n";
             }
 
+            // check if confirm password is the same as password
+            if (tbxConfirmPassword.Text != sPassword)
+            {
+                isValid = false;
+                errorMessage += "Passwords do not match.\n";
+            }
+
             if (isValid)
             {
                 try
@@ -297,6 +304,26 @@ namespace FoodOnCampus
                 // Display error message to the user
                 MessageBox.Show(errorMessage, "Input Verification Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pnlSignUp_Paint(object sender, PaintEventArgs e)
+        {
+            //allign to left
+            pnlSignUp.Left = (this.ClientSize.Width - pnlSignUp.Width) / 2 +200;
+                ;
+        }
+
+        private void pnlLogIn_Paint(object sender, PaintEventArgs e)
+        {
+            //Align to right
+            pnlLogIn.Left = (this.ClientSize.Width - pnlLogIn.Width) / 2 -200;
+
+
+        }
+
+        private void frmWelcome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

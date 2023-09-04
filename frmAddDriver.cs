@@ -22,6 +22,8 @@ namespace FoodOnCampus
 
         private void frmAddDriver_Load(object sender, EventArgs e)
         {
+            //Open in the center of window
+            this.CenterToScreen();
 
         }
 
