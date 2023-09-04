@@ -20,7 +20,7 @@ namespace FoodOnCampus
         private int DP_ID;
         private int Restaurant_ID;
         private decimal Order_Price = 0;
-        private string Menu_Items_IDs;
+        private string Menu_Items_IDs = "";
         private DateTime Date;
         private string Status = "Incomplete";
 
@@ -69,11 +69,6 @@ namespace FoodOnCampus
 
         public void ProcessPayment()
         {
-            //TODO
-            //This method must send an email to the driver details about the order
-            //Also should direct user to a payment screen
-            //No formal payment functionality is required, maybe just a mock screen?
-
             frmPayment frmPayment = new frmPayment();
             frmPayment.Data = Order_Price;
             frmPayment.ShowDialog();
@@ -287,7 +282,15 @@ namespace FoodOnCampus
                     {
                        
                         Order_Price += dataReader.GetDecimal(2);
-                        Menu_Items_IDs += "/" + dataReader.GetInt32(0).ToString();
+                        if (Menu_Items_IDs.Length == 0)
+                        {
+                            Menu_Items_IDs += dataReader.GetInt32(0).ToString();
+                        }
+                        else
+                        {
+                            Menu_Items_IDs += "," + dataReader.GetInt32(0).ToString();
+                        }
+                       
 
                         string Order = cbMenuItems.Text + ": \t " + dataReader.GetDecimal(2).ToString("c");
                         lstOutput.Items.Add(Order);
