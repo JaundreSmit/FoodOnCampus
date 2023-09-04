@@ -131,7 +131,7 @@ namespace FoodOnCampus
         {
             try
             {
-                if (string.IsNullOrEmpty(cbRestaurants.Text) || string.IsNullOrEmpty(cbMenuItems.Text) || string.IsNullOrEmpty(cbDeliveryPoints.Text))
+                if (string.IsNullOrEmpty(cbRestaurants.Text) || string.IsNullOrEmpty(cbMenuItems.Text) || string.IsNullOrEmpty(cbDeliveryPoints.Text) || (lstOutput.Items.Count == 0))
                 {
                     MessageBox.Show("Please fill all the necessary requirements", "Error");
                 }
