@@ -82,6 +82,8 @@ namespace FoodOnCampus
                 if (frmPayment.Payed)
                 {
                     string email = "";
+                    int id = 0;
+                    string restaurant = "";
 
                     con.Open();
 
@@ -95,9 +97,32 @@ namespace FoodOnCampus
 
                     con.Close();
 
+                    con.Open();
+
+                    comm = new SqlCommand("SELECT Restaurant_ID FROM Orders", con); 
+                    dataReader = comm.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        id = Convert.ToInt32(dataReader.GetValue(0)); 
+                    }
+
+                    con.Close();
+
+                    con.Open();
+
+                    comm = new SqlCommand("SELECT Restaurant_Name FROM Restaurants WHERE Restaurant_ID = "+id+"", con);
+                    dataReader = comm.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        restaurant = dataReader.GetValue(0).ToString();
+                    }
+
+                    con.Close();
 
                     //can replace "Test" parameter with any information you want to give to the driver
-                    Email.SendEmail("smtp.gmail.com", 587, true, "foodoncampusnwu@gmail.com", "rnxdxuxdsvwynpjk", email, "New order", "Test"); 
+                    Email.SendEmail("smtp.gmail.com", 587, true, "foodoncampusnwu@gmail.com", "rnxdxuxdsvwynpjk", email, "New order", "New order ready for pickup at "+restaurant); 
                 }
             }
             catch(Exception ex)
