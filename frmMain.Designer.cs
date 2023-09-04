@@ -104,10 +104,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 521);
+            this.BackgroundImage = global::FoodOnCampus.Properties.Resources.FoodOnCampusBackground;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(884, 861);
             this.Controls.Add(this.pnlNavigate);
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Food On Campus";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlNavigate.ResumeLayout(false);

@@ -47,7 +47,7 @@
             // lstOutput
             // 
             this.lstOutput.FormattingEnabled = true;
-            this.lstOutput.Location = new System.Drawing.Point(231, 99);
+            this.lstOutput.Location = new System.Drawing.Point(231, 165);
             this.lstOutput.Name = "lstOutput";
             this.lstOutput.Size = new System.Drawing.Size(263, 277);
             this.lstOutput.TabIndex = 10;
@@ -71,9 +71,11 @@
             // 
             // pbLogo
             // 
+            this.pbLogo.Image = global::FoodOnCampus.Properties.Resources.OrderHere;
             this.pbLogo.Location = new System.Drawing.Point(12, 12);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(482, 81);
+            this.pbLogo.Size = new System.Drawing.Size(482, 136);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 9;
             this.pbLogo.TabStop = false;
             // 
@@ -125,7 +127,7 @@
             this.grpOrdering.Controls.Add(this.lblMenuItem);
             this.grpOrdering.Controls.Add(this.cbMenuItems);
             this.grpOrdering.Controls.Add(this.lblRestaurant);
-            this.grpOrdering.Location = new System.Drawing.Point(12, 99);
+            this.grpOrdering.Location = new System.Drawing.Point(12, 165);
             this.grpOrdering.Name = "grpOrdering";
             this.grpOrdering.Size = new System.Drawing.Size(213, 278);
             this.grpOrdering.TabIndex = 11;
@@ -153,7 +155,7 @@
             // lblOrderTotal
             // 
             this.lblOrderTotal.AutoSize = true;
-            this.lblOrderTotal.Location = new System.Drawing.Point(390, 379);
+            this.lblOrderTotal.Location = new System.Drawing.Point(390, 445);
             this.lblOrderTotal.Name = "lblOrderTotal";
             this.lblOrderTotal.Size = new System.Drawing.Size(60, 13);
             this.lblOrderTotal.TabIndex = 12;
@@ -163,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 402);
+            this.ClientSize = new System.Drawing.Size(530, 480);
             this.Controls.Add(this.lblOrderTotal);
             this.Controls.Add(this.lstOutput);
             this.Controls.Add(this.pbLogo);

@@ -33,9 +33,7 @@ namespace FoodOnCampus
 
         private void frmProfile_Load(object sender, EventArgs e)
         {
-
             conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|DBMain.mdf; Integrated Security = True");
-
 
             //----------------------Get user name and set label-------------------
 
@@ -43,7 +41,7 @@ namespace FoodOnCampus
 
             conn.Open();
 
-            cmd = new SqlCommand("SELECT User_Name FROM Users WHERE User_ID = "+UserId+" ", conn);
+            cmd = new SqlCommand("SELECT User_Name FROM Users WHERE User_ID = " + UserId + " ", conn);
             rdr = cmd.ExecuteReader();
 
             while (rdr.Read())
@@ -54,8 +52,6 @@ namespace FoodOnCampus
             conn.Close();
 
             //--------------------------------------------------------------------
-
-
 
             //-------------------------Fill Orders list box-----------------------
 
@@ -73,10 +69,9 @@ namespace FoodOnCampus
 
             conn.Close();
 
-
             conn.Open();
 
-            cmd = new SqlCommand("SELECT Restaurant_ID FROM Orders WHERE Customer_ID = "+UserId+" ", conn);
+            cmd = new SqlCommand("SELECT Restaurant_ID FROM Orders WHERE Customer_ID = " + UserId + " ", conn);
             rdr = cmd.ExecuteReader();
             int count = 0;
 
@@ -88,9 +83,9 @@ namespace FoodOnCampus
 
             conn.Close();
 
-            for (int i = 0; i < count; i++) 
+            for (int i = 0; i < count; i++)
             {
-                restaurants[i] = restaurantName[restaurantId[i]-1];
+                restaurants[i] = restaurantName[restaurantId[i] - 1];
             }
 
             lbxOrders.Items.Clear();
@@ -99,23 +94,29 @@ namespace FoodOnCampus
 
             conn.Open();
 
-            cmd = new SqlCommand("SELECT Order_ID, Order_Price, Date FROM Orders WHERE Customer_ID = "+UserId+" ", conn);
+            cmd = new SqlCommand("SELECT Order_ID, Order_Price, Date FROM Orders WHERE Customer_ID = " + UserId + " ", conn);
             rdr = cmd.ExecuteReader();
             int k = 0;
 
             while (rdr.Read())
             {
-                lbxOrders.Items.Add(rdr.GetValue(0).ToString()+"\t"+ restaurants[k] +"\t"+rdr.GetValue(1).ToString()+"\t"+rdr.GetValue(2).ToString());
+                // Format the date to display only the day
+                DateTime date = Convert.ToDateTime(rdr.GetValue(2));
+                string formattedDate = date.ToString("d MMMM yyyy");
+
+                // Format the price using the currency format
+                decimal price = Convert.ToDecimal(rdr.GetValue(1));
+                string formattedPrice = price.ToString("c");
+
+                lbxOrders.Items.Add(rdr.GetValue(0).ToString() + "\t" + restaurants[k] + "\t" + formattedPrice + "\t" + formattedDate);
                 k++;
             }
 
             conn.Close();
 
             //-------------------------------------------------------------
-
-
-
         }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

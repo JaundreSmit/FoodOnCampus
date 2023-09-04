@@ -21,7 +21,7 @@ namespace FoodOnCampus
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-          //  ResizeControls(); STILL W.I.P.
+          ResizeControls();
 
           hideUserButtons();
         }
@@ -57,8 +57,8 @@ namespace FoodOnCampus
         private void ResizeControls()
         {
             // Calculate the scaling factor for the form's width and height
-            float widthRatio = (float)this.ClientSize.Width / 1920; // need Fine Tuning
-            float heightRatio = (float)this.ClientSize.Height / 1080; //needs Fine Tuning
+            float widthRatio = (float)this.ClientSize.Width / 900; 
+            float heightRatio = (float)this.ClientSize.Height / 900; 
 
             // Iterate through each control on the form
             foreach (Control control in this.Controls)
@@ -75,7 +75,7 @@ namespace FoodOnCampus
             pnlNavigate.Width = this.ClientSize.Width;
         }
 
-        private void hideUserButtons()
+        internal void hideUserButtons()
         {
             //Hide certain forms from being accessed if the user in not logged in:
             //Insert relevant buttons that open other forms
@@ -104,6 +104,13 @@ namespace FoodOnCampus
 
         private void btnWelcome_Click(object sender, EventArgs e)
         {
+            //If the user has already logged in:
+            if (User_ID > 0)
+            {
+                hideUserButtons();
+                User_ID = 0;
+            }
+            
             frmWelcome fWelcome = new frmWelcome(this);
             OpenFormAndCloseOthers(fWelcome);
         }

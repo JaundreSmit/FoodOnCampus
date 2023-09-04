@@ -245,6 +245,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DBMain.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\FoodOnCampusBackground.png" />
+    <None Include="Resources\OrderHere.png" />
     <None Include="Resources\Cards.png" />
   </ItemGroup>
   <ItemGroup>

@@ -142,6 +142,7 @@ namespace FoodOnCampus
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            fMain.hideUserButtons();
             // Get user inputs
             string sEmail = txtLogInEmail.Text.ToLower(); //all emails are forced lowercase
             string sPassword = txtLogInPassword.Text;
@@ -195,6 +196,7 @@ namespace FoodOnCampus
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            fMain.hideUserButtons();
             // Get user inputs
             string sName = NameFormat(txtSignUpName.Text);
             string sSurname = NameFormat(txtSignUpSurname.Text);
