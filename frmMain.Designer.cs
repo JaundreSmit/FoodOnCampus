@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnProfile = new System.Windows.Forms.Button();
             this.pnlNavigate = new System.Windows.Forms.Panel();
             this.btnAdminPanel = new System.Windows.Forms.Button();
@@ -39,9 +40,10 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.Location = new System.Drawing.Point(773, 12);
+            this.btnProfile.Location = new System.Drawing.Point(1031, 15);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(96, 36);
+            this.btnProfile.Size = new System.Drawing.Size(128, 44);
             this.btnProfile.TabIndex = 0;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -56,15 +58,18 @@
             this.pnlNavigate.Controls.Add(this.btnProfile);
             this.pnlNavigate.Controls.Add(this.btnWelcome);
             this.pnlNavigate.Location = new System.Drawing.Point(0, 0);
+            this.pnlNavigate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlNavigate.Name = "pnlNavigate";
-            this.pnlNavigate.Size = new System.Drawing.Size(879, 64);
+            this.pnlNavigate.Size = new System.Drawing.Size(1179, 79);
             this.pnlNavigate.TabIndex = 1;
+            this.pnlNavigate.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNavigate_Paint);
             // 
             // btnAdminPanel
             // 
-            this.btnAdminPanel.Location = new System.Drawing.Point(364, 12);
+            this.btnAdminPanel.Location = new System.Drawing.Point(485, 15);
+            this.btnAdminPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdminPanel.Name = "btnAdminPanel";
-            this.btnAdminPanel.Size = new System.Drawing.Size(96, 36);
+            this.btnAdminPanel.Size = new System.Drawing.Size(128, 44);
             this.btnAdminPanel.TabIndex = 4;
             this.btnAdminPanel.Text = "Admin Panel";
             this.btnAdminPanel.UseVisualStyleBackColor = true;
@@ -72,9 +77,10 @@
             // 
             // btnDriverMenu
             // 
-            this.btnDriverMenu.Location = new System.Drawing.Point(243, 12);
+            this.btnDriverMenu.Location = new System.Drawing.Point(324, 15);
+            this.btnDriverMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDriverMenu.Name = "btnDriverMenu";
-            this.btnDriverMenu.Size = new System.Drawing.Size(96, 36);
+            this.btnDriverMenu.Size = new System.Drawing.Size(128, 44);
             this.btnDriverMenu.TabIndex = 3;
             this.btnDriverMenu.Text = "Driver Menu";
             this.btnDriverMenu.UseVisualStyleBackColor = true;
@@ -82,9 +88,10 @@
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(122, 12);
+            this.btnOrder.Location = new System.Drawing.Point(163, 15);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(96, 36);
+            this.btnOrder.Size = new System.Drawing.Size(128, 44);
             this.btnOrder.TabIndex = 2;
             this.btnOrder.Text = "Place Order";
             this.btnOrder.UseVisualStyleBackColor = true;
@@ -92,9 +99,10 @@
             // 
             // btnWelcome
             // 
-            this.btnWelcome.Location = new System.Drawing.Point(3, 12);
+            this.btnWelcome.Location = new System.Drawing.Point(4, 15);
+            this.btnWelcome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnWelcome.Name = "btnWelcome";
-            this.btnWelcome.Size = new System.Drawing.Size(96, 36);
+            this.btnWelcome.Size = new System.Drawing.Size(128, 44);
             this.btnWelcome.TabIndex = 1;
             this.btnWelcome.Text = "Welcome Page";
             this.btnWelcome.UseVisualStyleBackColor = true;
@@ -102,14 +110,15 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::FoodOnCampus.Properties.Resources.FoodOnCampusBackground;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(884, 861);
+            this.ClientSize = new System.Drawing.Size(1179, 555);
             this.Controls.Add(this.pnlNavigate);
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Food On Campus";

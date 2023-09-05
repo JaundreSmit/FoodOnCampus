@@ -63,6 +63,10 @@ namespace FoodOnCampus
 
         private void frmPayment_Load(object sender, EventArgs e)
         {
+            //show form in center of window
+            this.CenterToScreen();
+
+
             Payed = false;
             lblAmount.Text = "R"+Data;
             cbxTip.SelectedIndex = 0;

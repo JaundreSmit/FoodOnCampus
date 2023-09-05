@@ -21,6 +21,15 @@ namespace FoodOnCampus
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            //maximize form
+            this.WindowState = FormWindowState.Maximized;
+
+            //btnProfile.left = screen size - btnProfile.width - 20
+            btnProfile.Left = this.ClientSize.Width - btnProfile.Width - 20;
+            
+
+
+
           ResizeControls();
 
           hideUserButtons();
@@ -156,6 +165,11 @@ namespace FoodOnCampus
                 frmAdmin fAdmin = new frmAdmin();
                 OpenFormAndCloseOthers(fAdmin);
             }
+        }
+
+        private void pnlNavigate_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

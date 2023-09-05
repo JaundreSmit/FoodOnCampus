@@ -115,6 +115,10 @@ namespace FoodOnCampus
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
+            //lblAdminName align to center
+            
+
+
             LoadOrderDetails();
             ShowDrivers("SELECT User_Name AS Name, User_Surname AS Surname, User_Email AS Email FROM Users WHERE User_Role = 'Driver' ORDER BY User_Name DESC");
 

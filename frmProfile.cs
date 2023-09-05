@@ -33,6 +33,19 @@ namespace FoodOnCampus
 
         private void frmProfile_Load(object sender, EventArgs e)
         {
+
+            //center lable 
+            lblHello.Left = (this.ClientSize.Width - lblHello.Size.Width) / 2;
+
+           
+       
+
+
+
+
+
+
+
             conn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|DBMain.mdf; Integrated Security = True");
 
             //----------------------Get user name and set label-------------------
@@ -157,6 +170,11 @@ namespace FoodOnCampus
 
                 conn.Close();
             }
+        }
+
+        private void lblHello_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
